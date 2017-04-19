@@ -1,0 +1,24 @@
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+</head>
+
+<h1><%= @cat.name %></h1>
+
+<table>
+  <tr>
+    <th>Birth Date</th>
+    <th>Color</th>
+    <th>Sex</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><%= @cat.birth_date %></td>
+    <td><%= @cat.color %></td>
+    <td><%= @cat.sex %></td>
+    <td><%= @cat.description %></td>
+  </tr>
+</table>

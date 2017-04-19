@@ -1,0 +1,39 @@
+<% action_url = (action == :new) ? new_cat_url : edit_cat_url(cat) %>
+
+<form action="index.html" method="post">
+
+<% if action_url != new_cat_url  %>
+  <input type="hidden" name="_method" value="patch">
+<% end %>
+
+
+  <label for="name">Name: </label>
+  <input type="text" name="name" value= "<%= cat.name %>">
+
+  <br>
+
+  <label for="radio button">Sex: </label>
+  M<input type="radio" name="radio button" value="M" <%= cat.sex == 'M' ? 'checked' : ''%> >
+  F<input type="radio" name="radio button" value="F" <%= cat.sex == 'F' ? 'checked' : ''%> >
+
+  <br>
+
+  <select name="colors">
+    <option disabled <%= cat.color.nil? ? 'selected' : '' %> >--Select Color--</option>
+    <option value="Red" <%= cat.color == "red" ? 'selected' : '' %> >Red</option>
+    <option value="Blue" <%= cat.color == "blue" ? 'selected' : '' %> >Blue</option>
+    <option value="Yellow" <%= cat.color == "yellow" ? 'selected' : '' %> >Yellow</option>
+    <option value="Green" <%= cat.color == "green" ? 'selected' : '' %> >Green</option>
+    <option value="Purple" <%= cat.color == "purple" ? 'selected' : '' %> >Purple</option>
+  </select>
+
+  <br>
+
+  <input type="date" name="Birthday" value=<%= cat.birth_date %>>
+
+  <br>
+
+  <label>Description<br><textarea name="name" rows="8" cols="80"><%= cat.description%></textarea></label>
+
+
+</form>
